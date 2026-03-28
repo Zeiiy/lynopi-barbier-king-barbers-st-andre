@@ -1,0 +1,703 @@
+/* ============================================
+   TEMPLATE E: ZEN SPA - Style.css
+   La Réunion Beauty Salon
+   ============================================ */
+
+:root {
+    --primary: #7A8B6F;
+    --primary-dark: #6D4666;
+    --primary-light: #F5EAF4;
+    --accent: #C4A87C;
+    --bg: #F8F5F0;
+    --surface: #FFFFFF;
+    --text: #3A3A2A;
+    --text-light: #A08A9B;
+    --border: #E8D5E6;
+
+    --font-serif: 'Lora', serif;
+    --font-sans: 'Nunito', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary);
+    color: white;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* ============================================
+   HEADER & NAVIGATION
+   ============================================ */
+
+.header {
+    background-color: transparent;
+    border-bottom: 1px solid var(--border);
+    padding: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero {
+    height: 40vh;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ============================================
+   INTRO SECTION
+   ============================================ */
+
+.intro-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#intro-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.intro-subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: var(--text-light);
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+
+.about-section {
+    padding: 3rem 2rem;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.about-section h2 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.about-text p {
+    color: var(--text-light);
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.about-text p:first-child::first-letter {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+/* ============================================
+   SOINS SECTION
+   ============================================ */
+
+.soins-section {
+    padding: 4rem 2rem;
+}
+
+.soins-section h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.soins-scroll {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    padding: 1rem;
+    scroll-behavior: smooth;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.soins-scroll::-webkit-scrollbar {
+    height: 4px;
+}
+
+.soins-scroll::-webkit-scrollbar-track {
+    background: var(--border);
+}
+
+.soins-scroll::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+.soin-card {
+    flex: 0 0 350px;
+    background-color: var(--surface);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(122, 139, 111, 0.08);
+    transition: all 0.3s ease;
+}
+
+.soin-card:hover {
+    box-shadow: 0 8px 24px rgba(122, 139, 111, 0.12);
+    transform: translateY(-4px);
+}
+
+.soin-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.soin-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    color: var(--primary);
+    padding: 1.5rem 1.5rem 0.5rem;
+    font-weight: 600;
+}
+
+.soin-duration {
+    color: var(--accent);
+    font-size: 0.85rem;
+    padding: 0 1.5rem;
+    font-weight: 500;
+}
+
+.soin-desc {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    padding: 0.75rem 1.5rem 1.5rem;
+    line-height: 1.6;
+}
+
+/* ============================================
+   GALERIE SECTION
+   ============================================ */
+
+.galerie-section {
+    padding: 4rem 2rem;
+}
+
+.galerie-section h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.galerie-single {
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+    overflow: hidden;
+    border-radius: 4px;
+    height: 400px;
+}
+
+.galerie-single img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.galerie-double {
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.galerie-double img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+}
+
+/* ============================================
+   QUOTE SECTION
+   ============================================ */
+
+.quote-section {
+    padding: 5rem 2rem;
+    text-align: center;
+    background-color: var(--surface);
+}
+
+.quote {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--primary);
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 700;
+}
+
+/* ============================================
+   INFO SECTION
+   ============================================ */
+
+.info-section {
+    padding: 4rem 2rem;
+}
+
+.info-section h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.info-container {
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.info-block {
+    background-color: var(--surface);
+    padding: 2rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.info-block h3 {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.info-block p {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.info-block a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.info-block a:hover {
+    color: var(--primary);
+}
+
+.horaires-list {
+    list-style: none;
+}
+
+.horaires-list li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    color: var(--text-light);
+}
+
+.horaires-list .day {
+    color: var(--text);
+    font-weight: 500;
+}
+
+.map-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(122, 139, 111, 0.1);
+}
+
+.map-container iframe {
+    border: none;
+    display: block;
+}
+
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
+
+.contact-section {
+    padding: 4rem 2rem;
+    background-color: var(--surface);
+}
+
+.contact-section h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 1rem;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 8px rgba(122, 139, 111, 0.2);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--text-light);
+}
+
+.submit-button {
+    background-color: var(--primary);
+    color: var(--surface);
+    border: none;
+    padding: 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.submit-button:hover {
+    background-color: var(--text);
+    box-shadow: 0 6px 20px rgba(122, 139, 111, 0.2);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+    background-color: var(--bg);
+    color: var(--text-light);
+    text-align: center;
+    padding: 2.5rem;
+}
+
+.footer-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.footer-link {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--primary);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .info-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .galerie-double {
+        grid-template-columns: 1fr;
+    }
+
+    .galerie-double img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        gap: 1rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+        font-size: 0.85rem;
+    }
+
+    .hero {
+        height: 30vh;
+    }
+
+    .intro-section {
+        padding: 3rem 1.5rem;
+    }
+
+    #intro-title {
+        font-size: 1.8rem;
+    }
+
+    .about-section,
+    .soins-section,
+    .galerie-section,
+    .quote-section,
+    .info-section,
+    .contact-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .about-section h2,
+    .soins-section h2,
+    .galerie-section h2,
+    .info-section h2,
+    .contact-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .quote {
+        font-size: 1.5rem;
+    }
+
+    .info-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .galerie-single {
+        height: 300px;
+        margin-bottom: 2rem;
+    }
+
+    .soin-card {
+        flex: 0 0 300px;
+    }
+
+    .soin-image {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 1.5rem;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .hero {
+        height: 25vh;
+        margin-bottom: 1rem;
+    }
+
+    .intro-section {
+        padding: 2rem 1rem;
+    }
+
+    #intro-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .intro-subtitle {
+        font-size: 1rem;
+    }
+
+    .about-section,
+    .soins-section,
+    .galerie-section,
+    .quote-section,
+    .info-section,
+    .contact-section {
+        padding: 2rem 1rem;
+    }
+
+    .about-section h2,
+    .soins-section h2,
+    .galerie-section h2,
+    .info-section h2,
+    .contact-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .about-text p {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .quote {
+        font-size: 1.25rem;
+        padding: 3rem 1rem;
+    }
+
+    .info-container {
+        gap: 1rem;
+    }
+
+    .info-block {
+        padding: 1.5rem;
+    }
+
+    .info-block h3 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .info-block p {
+        font-size: 0.85rem;
+    }
+
+    .galerie-single {
+        height: 220px;
+        margin-bottom: 1.5rem;
+    }
+
+    .soin-card {
+        flex: 0 0 280px;
+    }
+
+    .soin-image {
+        height: 180px;
+    }
+
+    .soin-card h3 {
+        font-size: 1.2rem;
+        padding: 1rem 1rem 0.3rem;
+    }
+
+    .contact-form {
+        gap: 1rem;
+    }
+
+    .footer {
+        padding: 1.5rem;
+    }
+
+    .footer p {
+        font-size: 0.8rem;
+    }
+}
